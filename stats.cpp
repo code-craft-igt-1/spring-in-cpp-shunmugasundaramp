@@ -1,7 +1,8 @@
 #include "stats.h"
 #include <cmath>
 
-Stats Statistics::ComputeStatistics(const std::vector<float>& dataset) {
+template<class T>
+Stats Statistics::ComputeStatistics(const std::vector<T>& dataset) {
     Stats computedStats;
     if(dataset.size() == 0) {
         computedStats.average = nan("");
