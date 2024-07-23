@@ -3,9 +3,9 @@
 Stats Statistics::ComputeStatistics(const std::vector<float>& dataset) {
     Stats computedStats;
     if(dataset.size() == 0) {
-        computedStats.average = NAN;
-        computedStats.min = NAN;
-        computedStats.max = NAN;
+        computedStats.average = nan("");
+        computedStats.min = nan("");
+        computedStats.max = nan("");
     } else {
         computedStats.average = 0;
         computedStats.min = dataset[0];
