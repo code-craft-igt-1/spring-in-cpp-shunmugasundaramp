@@ -1,7 +1,7 @@
 #include "stats.h"
 #include <cmath>
 
-template<class T>
+template<typename T>
 Stats Statistics::ComputeStatistics(const std::vector<T>& dataset) {
     Stats computedStats;
     if(dataset.size() == 0) {
@@ -25,3 +25,6 @@ Stats Statistics::ComputeStatistics(const std::vector<T>& dataset) {
     }
     return computedStats;
 }
+
+template Stats Statistics::ComputeStatistics<float>(const std::vector<float>&);
+template Stats Statistics::ComputeStatistics<double>(const std::vector<double>&);
