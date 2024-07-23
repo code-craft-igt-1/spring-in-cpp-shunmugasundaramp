@@ -4,7 +4,7 @@
 #include <cmath>
 
 TEST(Statistics, ReportsAverageMinMax) {
-    auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
+    auto computedStats = Statistics::ComputeStatistics<float>({1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
     EXPECT_LT(std::abs(computedStats.average - 4.525), epsilon);
     EXPECT_LT(std::abs(computedStats.max - 8.9), epsilon);
@@ -12,7 +12,10 @@ TEST(Statistics, ReportsAverageMinMax) {
 }
 
 TEST(Statistics, AverageNaNForEmpty) {
-    auto computedStats = Statistics::ComputeStatistics({});
+    auto computedStats = Statistics::ComputeStatistics<float>({});
+    EXPECT_NEQ(isnan(computedStats.average), 0)
+    EXPECT_NEQ(isnan(computedStats.max), 0)
+    EXPECT_NEQ(isnan(computedStats.min), 0)
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
     

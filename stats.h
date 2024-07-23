@@ -2,6 +2,14 @@
 
 namespace Statistics {
     // define the Stats structure here. See the tests to infer its properties
-    
-    Stats ComputeStatistics(const std::vector<___>& );
+    template<class T>
+    Stats ComputeStatistics(const std::vector<T>& );
 }
+
+class Stats
+{
+    public:
+    float average;
+    float min;
+    float max;
+};
